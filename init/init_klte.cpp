@@ -63,6 +63,13 @@ void init_target_properties()
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G870F");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "klteactivexx");
         gsm_properties();
+    } else if (bootloader.find("G870W") == 0) {
+        /* kltecanactive */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/kltevlactive/kltecanactive:6.0.1/MMB29M/G870WVLU1CPF6:user/release-keys");
+        property_override("ro.build.description", "kltevlactive-user 6.0.1 MMB29M G870WVLU1CPF6 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G870W");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "kltecanactive");
+        gsm_properties();
     }
 
     std::string device = GetProperty("ro.product.device", "");
